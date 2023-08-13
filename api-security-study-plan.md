@@ -160,7 +160,7 @@ In summary, authentication (AuthN) is the process of verifying a user's identity
 ## API Security Labs and Practices
 1. [OWASP crAPI](https://github.com/OWASP/crAPI): Completely Ridiculous API (crAPI) can help teams understand the ten most important security aspects of an API within a mock environment. crAPI has implemented almost every security loophole that APIs should not have—this offers a good model that showcases how not to secure APIs.
 
-crAPI uses a microservices architecture and is composed of several services which are developed using the following:
+  crAPI uses a microservices architecture and is composed of several services which are developed using the following:
 - Identity: user and authentication endpoints 
 - Web: main Ingress service 
 - Community: community blogs and comments endpoints 
@@ -168,6 +168,24 @@ crAPI uses a microservices architecture and is composed of several services whic
 - Workshop—vehicle workshop endpoints 
 - Postgres—SQL Database 
 - Mongo—NoSQL Database
+
+2. [VAmPI](https://github.com/erev0s/VAmPI): is a vulnerable API made with Flask and it includes vulnerabilities from the OWASP top 10 vulnerabilities for APIs. It was created as I wanted a vulnerable API to evaluate the efficiency of tools used to detect security issues in APIs. It includes a switch on/off to allow the API to be vulnerable or not while testing. This allows to cover better the cases for false positives/negatives. VAmPI can also be used for learning/teaching purposes. You can find a bit more details about the vulnerabilities in erev0s.com.
+
+  **Features**
+  - Based on OWASP Top 10 vulnerabilities for APIs.
+  - OpenAPI3 specs and Postman Collection included.
+  - Global switch on/off to have a vulnerable environment or not.
+  - Token-Based Authentication (Adjust lifetime from within app.py)
+
+  **List of Vulnerabilities**
+  - SQLi Injection
+  - Unauthorized Password Change
+  - Broken Object Level Authorization
+  - Mass Assignment
+  - Excessive Data Exposure through debug endpoint
+  - User and Password Enumeration
+  - RegexDOS (Denial of Service)
+  - Lack of Resources & Rate Limiting
 
 ## API Security Tools
 1. [Dastardly form Burp suite (free): Use it in CI/CD pipeline](https://portswigger.net/burp/documentation/dastardly/generic) 
